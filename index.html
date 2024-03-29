@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFILIO</title>
+    <style>
+        
+        .face{
+            display: inline;
+            position: absolute;
+            left: 60%;
+            top: 20%;
+            border-radius: 20%;
+            width: 20%;
+            height: 50%;
+           box-shadow: 6px 6px 8px rgb(53,186,227);
+        }
+        li{
+            display: inline;
+            color: aliceblue;
+            margin-left: 50px;
+            font-size: 20px;
+        }
+        ul{
+            display: inline;
+            margin-left: 40%;
+        }
+        li:hover{
+            border-bottom: 2px solid white;
+            text-shadow: 4px 4px 6px rgb(53, 186, 227);
+        }
+        .navbar{
+            position: sticky;
+            top: 0;
+            background-color: rgba(1, 3, 48, 0.637);
+            padding: 15px;
+            box-shadow: 4px 4px 6px rgb(53, 186, 227);
+        }
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        h1{
+            display: inline;
+        }
+        .typed{
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            font-size: xx-large;
+            color: aliceblue;
+            text-shadow: 4px 4px 6px  rgb(53, 194, 196);
+            animation: typewriter 2s steps(13) infinite alternate,
+                blink 800ms steps(13) infinite normal;
+            border-right: 5px solid black;
+        }
+ 
+        @keyframes typewriter {
+            from {
+                width: 0%;
+            }
+ 
+            to {
+                width: 28%;
+            }
+        }
+ 
+        @keyframes blink {
+            from {
+                border-color: rgb(20, 146, 214);
+            }
+ 
+            to {
+                border-color: transparent;
+            }
+        }
+        .name{
+            
+            font-size: 60px;
+            color: aliceblue;
+            text-shadow: 4px 4px 6px  rgb(53, 194, 196);
+            display: inline;
+        }
+        #main{
+            margin-top: 15%;
+            margin-left: 20%;
+            font-size: larger;
+        }
+        .skills{
+            display: block;
+            text-align: left;
+            color: aliceblue;
+            text-shadow: 4px 4px 6px  rgb(53, 194, 196);
+            display: inline;
+        }
+        .container{
+           position: relative;
+           max-width: 500px;
+           width: 100%;
+            background: #fff;
+            margin: 0 60%;
+            padding: 10px 20px;
+            border-radius: 7px;
+        }
+        .container .skill-box{
+            width: 100%;
+            margin: 25px 0;
+        }
+        .skill-box .title{
+            display:block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+        .skill-box .skill-bar{
+            height: 8px;
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 6px;
+            background: rgba(0,0,0,0.1);
+        }
+        .skill-bar .skill-per{
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 99%;
+            border-radius: 6px;
+            background: #4070f4;
+            animation: progress 0.4s ease-in-out forwards;
+        }
+        .skill-per.css{
+            width: 90%;
+            animation-delay: 0.1s;
+        }
+        .skill-per.javascript{
+            width: 85%;
+            animation-delay: 0.2s;
+        }
+        .skill-per.c{
+            width: 95%;
+            animation-delay: 0.3s;
+        }
+        .skill-per.java{
+            width: 80%;
+            animation-delay: 0.4s;
+        }
+        .skill-per.python{
+            width: 85%;
+            animation-delay: 0.5s;
+        }
+        .skill-per.react{
+            width: 60%;
+            animation-delay: 0.6s;
+        }
+        .skill-per.database{
+            width: 75%;
+            animation-delay: 0.7s;
+        }
+
+        @keyframes progress{
+            0%{
+                width: 0;
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .skill-per .tooltip{
+            position: absolute;
+            right: -14px;
+            top: -28px;
+            font-size: 9px;
+            font-weight: 500;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: #4070f4
+        }
+        .tooltip::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            height: 10px;
+            width: 10px;
+            z-index: -1;
+            background-color: #4070f4;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        .contain{
+            position: relative;
+            bottom: 50%;
+            display: flex;
+            justify-content: right;
+            align-items: right;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .contain .prog{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            color: #fff;
+            background: #444 linear-gradient(to right, transparent 50%, var(--clr) 0);
+        }
+        .contain .prog h3{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 1.2cm;
+            z-index:1;
+            font-weight: 500;
+        }
+        .contain .prog h3 span{
+            font-size:0.65cm;
+            font-weight: 400; 
+        }
+        .contain .prog h4{
+            position: absolute;
+            top: 62%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index:1;
+            font-weight: 500;
+            color: var(--clr);
+            text-transform: uppercase;
+        }
+        .contain .prog::before{
+            content: '';
+            display: block;
+            height: 100%;
+            margin-left: 50%;
+            transform-origin:left;
+            border-radius: 0 100% 100% 0/50%;
+
+        }
+        .contain .prog::after{
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border-radius: 50%;
+            background:#222;
+        }
+        .contain .prog::before{
+            background: var(--clr);
+            transform: rotate(calc(((var(--i) - 50) * 0.01turn )));
+        }
+        .images{
+            margin-top: 150px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .project{
+            margin-top: 60px;
+            text-align: center;
+            color: #fff;
+            font-size: 65px;
+            text-shadow: 4px 4px 6px  rgb(53, 194, 196);
+        }
+        table,th,td{
+            border: 1px solid white;
+            padding: 45px;
+            font-size: 40px
+        }
+        table{
+            background-color: rgb(96, 217, 217);
+            text-shadow: 4px 4px 6px  rgb(53, 194, 196);
+        }
+        th,td{
+            background-color: #517df3;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+    </style>
+</head>
+<body style="background-image: url(back.jpeg) ;background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+    <nav class="navbar">
+        
+    <h1 style=" color: aliceblue;text-shadow: 4px 4px 6px rgb(53, 186, 227);">PORTFOLIO</h1>
+        <ul>
+            <a href="#main"><li><b>Home</b></li></a>
+            <a href="study.html"><li><b>About</b></li></a>
+            <a href="#second"><li><b>Skills</b></li></a>
+            <a href="#third"><li><b>Project</b></li></a>
+            <a href="#fourth"><li><b>Certificate</b></li></a>
+        </ul>
+    </nav>
+    <section>
+<div id="main">
+    <p class="name">CHARUBALA B</h3>
+        <br>
+    <p style="color: aliceblue;text-shadow: 4px 4px 6px  rgb(53, 146, 227);display: inline-block; font-size: 50px;">I am a <p class="typed"> Full Stack Developer.</p></p>
+    <br>
+    <a href="https://www.linkedin.com/in/charubala-b-6677a7258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><img src="linkedin.svg" style="width: 30px;height: 30px; background-color: aliceblue;"></a>
+    <a href="https://github.com/charubala-b"><img src="github.svg" style="width:30px;height: 30px; background-color: aliceblue;"></a>
+    <img src="ch.jpg" class="face">
+    <a href="study.html"><button style="background-color: aqua; color: white; border-radius: 50px;margin-top: 6%; margin-left: 48%; padding: 20px; font-size: larger;">More To Know</button></a>
+   
+</div>
+</section>
+<section>
+<hr style="margin-top: 15%;">
+<div id="second">
+<h2 class="Skills" style="margin-left: 10%;position: relative;top: 300px; color: aliceblue; text-shadow: 4px 4px 6px rgb(53, 186, 227); font-size: 80px;">My Skills</h2>
+<div class="container">
+    <div class="skill-box">
+        <span class="title">HTML</span>
+        <div class="skill-bar html">
+            <span class="skill-per">
+                <span class="tooltip">99%</span>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <span class="title">CSS</span>
+        <div class="skill-bar">
+            <span class="skill-per css">
+                <span class="tooltip">90%</span>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <span class="title">JavaScript</span>
+        <div class="skill-bar">
+            <span class="skill-per javascript">
+                <span class="tooltip">85%</span>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <span class="title">C</span>
+        <div class="skill-bar">
+            <span class="skill-per c">
+                <span class="tooltip">95%</span>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <span class="title">Java</span>
+        <div class="skill-bar">
+            <span class="skill-per java">
+                <span class="tooltip">80%</span>
+            </span>
+
+        </div>
+    </div>
+    <div class="skill-box">
+        <span class="title">Python</span>
+        <div class="skill-bar">
+            <span class="skill-per python">
+                <span class="tooltip">85%</span>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <span class="title">React</span>
+        <div class="skill-bar">
+            <span class="skill-per react">
+                <span class="tooltip">60%</span>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <span class="title">DataBase</span>
+        <div class="skill-bar">
+            <span class="skill-per database">
+                <span class="tooltip">75%</span>
+            </span>
+
+        </div>
+    </div>
+</div>
+<br>
+<div class="contain">
+    <div class="prog" style="--i:85;--clr:#43f94a;">
+        <h3>85<span>%</span></h3>
+        <h4>Communication</h4>
+    </div>
+
+    <div class="prog" style="--i:62;--clr:#43b3f9;">
+        <h3>62<span>%</span></h3>
+        <h4>Creativity</h4>
+    </div>
+
+    <div class="prog" style="--i:75;--clr:#de43f9;">
+        <h3>75<span>%</span></h3>
+        <h4>Problem Solving</h4>
+    </div>
+
+    <div class="prog" style="--i:78;--clr:#f9f943;">
+        <h3>78<span>%</span></h3>
+        <h4>Team Work</h4>
+    </div>
+</div>
+</div>
+</section>
+<hr style="margin-top: 7%;">
+<section>
+    <div id="third">
+        <div>
+            <h3 class="project">LatestProject</h3>
+        </div>
+    <div class="images">
+        <div class="sign">
+        <img src="sign.jpeg" style="height: 70%;">
+        <h4 style="text-align: center; color:rgb(88, 206, 235);  margin-top: 10px;">Sign To Speech Conversion</h4>
+        <!--<h5 style="color: white;">The Project was developed using CNN(Convolution neural network) Data Science</h5>-->
+        <br>
+        <h5 style="color: white; text-align: center;">The Project was developed using CNN ie.</h5>
+        <h5 style="color: white; text-align: center;">Convolution neural network Data Science</h5>
+        </div>
+        <div class="vegetation">
+        <img src="vegetation.jpeg">
+        <h4 style="text-align: center; color: rgb(88, 206, 235);  margin-top: 10px;">Vegetation Prediction Using Satellite Images</h4>
+        <!--<h5 style="color: white;">The Project was developed using Spectral Band and analysing the amount of vegetation based on NDVI calculation</h5>-->
+        <br>
+        <h5 style="color: white; text-align: center;">The Project was developed using Spectral</h5>
+        <h5 style="color: white; text-align: center;">Band and analysing the amount of vegetation</h5>
+        <h5 style="color: white; text-align: center;">based on NDVI calculation</h5>
+        </div>
+        <div class="medical">
+        <img src="medical.jpeg">
+        <h4 style="text-align: center; color: rgb(88, 206, 235); margin-top: 10px;">Primary Health Center Management</h4>
+        <br>
+        <h5 style="color: white; text-align: center;">The Project was developed using JavaFx and</h5>
+        <h5 style="color: white; text-align: center;">Database of MongoDB.This helps in creating</h5>
+        <h5 style="color: white; text-align: center;">appointments with doctors</h5>
+        </div>
+    </div>
+    <a href="https://github.com/charubala-b"><button style="background-color: aqua; color: white; padding: 10px; border-radius: 50px;margin-top: 6%; margin-left: 45%; padding: 25px; font-size: larger;">More To Know</button></a>
+    </div>
+</section>
+<hr style="margin-top: 6%;">
+<section>
+    <div id="fourth">
+        <div>
+            <h3 class="project">Certificate</h3>
+        </div>
+    <div>
+    <table style="color: #fff;margin-left:10%;margin-top: 4%;margin-bottom: 2%;">
+        <tr>
+            <th>UDEMY</th>
+            <th>NPTEL</th>
+        </tr>
+        <tr>
+            <td>Programming in java</td>
+            <td>Programming in C</td>
+        </tr>
+        <tr>
+            <td>Data Structure</td>
+            <td>Joy of Computing Using Python</td>
+        </tr>
+    </table>
+    </div>
+    </div>
+</section>
+    <!--<div>
+    <a href="study.html" target="_blank"><img src="study.jpeg"></a>
+    <br>
+    <a href="project.html" target="_blank"><img src="project.jpeg"></a>
+    <br>
+    <a href="certificate.html" target="_blank"><img src="certificate.jpeg"></a>
+    </div>-->
+
+</body>
+</html>
